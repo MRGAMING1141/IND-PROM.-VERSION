@@ -7,8 +7,8 @@ import { prometheusLuaPlugin } from "./src/vite/prometheusLuaPlugin"
 export default defineConfig(({ command }) => {
   const isDevServer = command === "serve"
   const isVercel = process.env.VERCEL === "1"
-  const base = isDevServer || isVercel ? "/" : "/Prometheus/"
-  const docsPathRegex = /^\/(?:Prometheus\/)?docs\/?$/
+  const base = isDevServer || isVercel ? "/" : "/IND-PROM.-VERSION/"
+  const docsPathRegex = /^\/(?:IND-PROM.-VERSION\/)?docs\/?$/
   const rewriteDocsRequest = (url: string) => {
     const [pathname, search = ""] = url.split("?", 2)
     if (!pathname || !docsPathRegex.test(pathname)) {
